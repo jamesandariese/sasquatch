@@ -33,6 +33,10 @@ over an insecure line.
 
 Generates a random token which fills the space available in the RSA key.
 
+## TODO
+
+The hash still needs to be printed on both encrypt and decrypt.
+
 ## NAMING
 
 Sasquatch was an expansion on an abbreviation that made sense at one time.  The exact origin of the name has been lost. 
