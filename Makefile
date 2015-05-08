@@ -1,6 +1,7 @@
 include include.mk
 
 ${PROJECT_NAME}: main.go decrypt.go token.go
+	go get
 	go build
 
 ${PROJECT_NAME}.1.gz: README.md
