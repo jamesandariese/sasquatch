@@ -1,0 +1,16 @@
+language: go
+go:
+- 1.4
+addons:
+  apt:
+    packages:
+    - rpm
+deploy:
+  provider: releases
+  api_key:
+    secure: dGlNuMs9rUcXizkWNHS59ZVV6kkwBTeKU2uXX1wPfuU9gxrEGb63MHqB0tmsOdf5T80tWreP26CJcTagm4MOP7oV9OB+H6fNGJhUmzEOouOsVGzyQGDmpWI/N+w46OdjmDf2ZPoRFTRIrMHVhGcjAClW1vO2Nku2Ga9JyvD7vsw=
+  file:
+    - "$(head -1 README.md | grep -o '^[^(]*')_$(echo $TRAVIS_TAG | grep -oE 'v[0-9.]+$' |cut -c 2- )_amd64.deb"
+    - "$(head -1 README.md | grep -o '^[^(]*')-$(echo $TRAVIS_TAG | grep -oE 'v[0-9.]+$' |cut -c 2- )-1.x86_64.rpm"
+  on:
+    tags: true
