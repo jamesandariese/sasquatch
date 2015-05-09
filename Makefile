@@ -1,6 +1,6 @@
 include include.mk
 
-${PROJECT_NAME}: main.go decrypt.go token.go ${PROJECT_NAME}.darwin_amd64
+${PROJECT_NAME}: main.go decrypt.go token.go ${PROJECT_NAME}${PACKAGE_TYPE}-${PACKAGE_VERSION}.darwin_amd64
 	go get
 	go build
 
